@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { fetchPotter } from './services/FetchPotter';
 import Filters from './components/Filters';
+import CharactersList from './components/CharactersList';
 
 class App extends React.Component {
 constructor(props) {
@@ -42,7 +43,8 @@ componentDidMount() {
     return (
       <div className="container">
         <h1 className="container__title">Harry Potter Characters</h1>
-        <Filters charactersArr={charactersArr} filteredInfo={filteredInfo} getInputValue={this.getInputValue} />
+        <Filters filteredInfo={filteredInfo} getInputValue={this.getInputValue} />
+        <CharactersList filteredInfo={filteredInfo} charactersArr={charactersArr} />
       </div>
     )
   }
