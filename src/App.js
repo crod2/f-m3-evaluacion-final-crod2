@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { fetchPotter } from './services/FetchPotter';
+import Filters from './components/Filters';
 
 class App extends React.Component {
 constructor(props) {
@@ -41,19 +42,7 @@ componentDidMount() {
     return (
       <div className="container">
         <h1 className="container__title">Harry Potter Characters</h1>
-        <label htmlFor="input-info" className="container__laber"></label>
-        <input type="text" id="input-info" className="container__input" value={filteredInfo} onChange={this.getInputValue}/>
-        <ul className="container__list">
-          {charactersArr
-          .filter(item => item.name.toLowerCase().includes(filteredInfo))
-          .map(item => 
-          <li className="list__characters" key={item.id}>
-          <h2>{item.name}</h2>
-          <img src={item.image} alt={`Imagen de ${item.name}`}></img>
-          <h3>{item.house}</h3>
-          </li>
-          )}
-        </ul>
+        <Filters charactersArr={charactersArr} filteredInfo={filteredInfo} getInputValue={this.getInputValue} />
       </div>
     )
   }
