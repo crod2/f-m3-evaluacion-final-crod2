@@ -10,7 +10,7 @@ class CharactersList extends React.Component {
       <React.Fragment>
         <ul className="container__list">
           {charactersArr
-          .filter(item => item.name.toLowerCase().includes(filteredInfo))
+          .filter(item => item.name.toLowerCase().includes(filteredInfo.toLowerCase()))
           .map(item => 
           <li className="list__characters" key={item.id}>
           <img className="characters__img" src={item.image} alt={`Imagen de ${item.name}`}></img>

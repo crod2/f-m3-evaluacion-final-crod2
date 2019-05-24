@@ -18,6 +18,7 @@ constructor(props) {
   this.fetchCharacters = this.fetchCharacters.bind(this);
   this.getInputValue = this.getInputValue.bind(this);
   this.resetFilters = this.resetFilters.bind(this);
+  this.getLS = this.getLS.bind(this);
 }
 
 fetchCharacters() {
@@ -26,7 +27,9 @@ fetchCharacters() {
       const newCharactersArr = data.map((item, index) => {
         return {...item, id : index}
       })
-      
+
+      localStorage.setItem('potterInfo', JSON.stringify(newCharactersArr));
+
       this.setState( {charactersArr : newCharactersArr} );
   })
 }
@@ -37,8 +40,17 @@ getInputValue(event) {
   this.setState( {filteredInfo : search} );
 }
 
+getLS() {
+  return JSON.parse(localStorage.getItem('potterInfo'));
+}
+
 componentDidMount() {
-  this.fetchCharacters();
+  const savedStorage = this.getLS()
+  if(savedStorage) {
+    this.setState( {charactersArr : savedStorage} );
+  } else {
+    this.fetchCharacters(); 
+  }
 }
 
 resetFilters() {
