@@ -17,6 +17,7 @@ constructor(props) {
 
   this.fetchCharacters = this.fetchCharacters.bind(this);
   this.getInputValue = this.getInputValue.bind(this);
+  this.resetFilters = this.resetFilters.bind(this);
 }
 
 fetchCharacters() {
@@ -40,6 +41,10 @@ componentDidMount() {
   this.fetchCharacters();
 }
 
+resetFilters() {
+  this.setState( {filteredInfo : ''} )
+}
+
   render() {
     const { charactersArr, filteredInfo } = this.state;
     return (
@@ -56,7 +61,7 @@ componentDidMount() {
           />
         
           <Route path="/charactercard/:id" render={potterProps => (
-          <CharacterCard id={potterProps.match.params.id} charactersArr={charactersArr}/>)}/>
+          <CharacterCard id={potterProps.match.params.id} charactersArr={charactersArr} resetFilters={this.resetFilters} />)}/>
 
         </Switch>
 
