@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import { fetchPotter } from './services/FetchPotter';
+import { Route, Switch } from 'react-router-dom';
 import Filters from './components/Filters';
 import CharactersList from './components/CharactersList';
+import CharacterCard from './components/CharacterCard';
 
 class App extends React.Component {
 constructor(props) {
@@ -43,8 +45,21 @@ componentDidMount() {
     return (
       <div className="container">
         <h1 className="container__title">Harry Potter Characters</h1>
-        <Filters filteredInfo={filteredInfo} getInputValue={this.getInputValue} />
-        <CharactersList filteredInfo={filteredInfo} charactersArr={charactersArr} />
+        
+        <Switch>
+          <Route exact path="/" render={ () => 
+            <React.Fragment>
+              <Filters filteredInfo={filteredInfo} getInputValue={this.getInputValue} />
+              <CharactersList filteredInfo={filteredInfo} charactersArr={charactersArr} />
+            </React.Fragment>
+          }
+          />
+        
+          <Route path="/charactercard/:id" render={potterProps => (
+          <CharacterCard id={potterProps.match.params.id} charactersArr={charactersArr}/>)}/>
+
+        </Switch>
+
       </div>
     )
   }
