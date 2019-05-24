@@ -61,7 +61,8 @@ resetFilters() {
     const { charactersArr, filteredInfo } = this.state;
     return (
       <div className="container">
-        <h1 className="container__title">Harry Potter Characters</h1>
+        <h1 className="container__title">Welcome to the magical world of</h1>
+        <img className="container__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Harry_Potter_wordmark.svg/2180px-Harry_Potter_wordmark.svg.png"/>
         
         <Switch>
           <Route exact path="/" render={ () => 

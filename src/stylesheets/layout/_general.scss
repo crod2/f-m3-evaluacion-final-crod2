@@ -15,4 +15,13 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Oswald", Helvetica;
+  margin: 20px auto 5px auto;
+}
+
+.container__img {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
