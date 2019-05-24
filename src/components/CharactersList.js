@@ -13,9 +13,11 @@ class CharactersList extends React.Component {
           .filter(item => item.name.toLowerCase().includes(filteredInfo.toLowerCase()))
           .map(item => 
           <li className="list__characters" key={item.id}>
-          <img className="characters__img" src={item.image} alt={`Imagen de ${item.name}`}></img>
-          <Link to={`/charactercard/${item.id}`}><h2 className="characters__name">{item.name}</h2></Link>
-          <h3>{item.house}</h3>
+          <Link to={`/charactercard/${item.id}`} className="characters__link">
+            <img className="characters__img" src={item.image} alt={`Imagen de ${item.name}`}></img>
+            <h2 className="characters__name">{item.name}</h2>
+            <h3 className="characters__house">{item.house}</h3>
+          </Link>
           </li>
           )}
         </ul>

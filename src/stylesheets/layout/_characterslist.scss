@@ -8,7 +8,19 @@
   list-style: none;
 }
 
+.characters__link {
+  text-decoration: none;
+}
+
 .characters__img {
   width: 167px;
   height: 233px;
+}
+
+.characters__name {
+  font-family: "Oswald", Helvetica;
+}
+
+.characters__house {
+  font-family: "Oswald", Helvetica;
 }

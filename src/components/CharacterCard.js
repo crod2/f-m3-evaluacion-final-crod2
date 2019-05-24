@@ -20,15 +20,15 @@ class CharacterCard extends React.Component {
               <div className="card__img" style={{ backgroundImage: `url(${characterCard.image})` }} alt={`Imagen de ${characterCard.name}`}>
               </div>
               <div className="card__details">
-                <h2>{characterCard.name}</h2>
+                <h2 className="characters__name">{characterCard.name.toUpperCase()}</h2>
                 <ul className="card__details">
-                  <li>{characterCard.house}</li>
-                  <li>{characterCard.dateOfBirth}</li>
-                  <li>{characterCard.patronus}</li>
+                  <li>{`House: ${characterCard.house.toUpperCase()}`}</li>
+                  <li>{`Date of Birth: ${characterCard.dateOfBirth}`}</li>
+                  <li>{`Patronus: ${characterCard.patronus.toUpperCase()}`}</li>
                   {characterCard.alive ?
-                    <li>Estado: VIVO</li>
+                    <li>By the end of the saga they are... ALIVE!</li>
                     :
-                    <li>Estado: MUERTO</li>
+                    <li>By the end of the saga they are... ☠️</li>
                   }
                 </ul>
               </div>
