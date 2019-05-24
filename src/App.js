@@ -7,12 +7,13 @@ constructor(props) {
   super(props) 
 
   this.state = {
-    charactersArr: []
+    charactersArr: [],
+    filteredInfo : ''
   }
 
   this.fetchCharacters = this.fetchCharacters.bind(this);
+  this.getInputValue = this.getInputValue.bind(this);
 }
-
 
 fetchCharacters() {
   fetchPotter() 
@@ -21,8 +22,14 @@ fetchCharacters() {
         return {...item, id : index}
       })
       
-      this.setState( {charactersArr : newCharactersArr} )
+      this.setState( {charactersArr : newCharactersArr} );
   })
+}
+
+getInputValue(event) {
+  const search = event.currentTarget.value;
+
+  this.setState( {filteredInfo : search} );
 }
 
 componentDidMount() {
@@ -30,12 +37,14 @@ componentDidMount() {
 }
 
   render() {
-    const { charactersArr } = this.state;
+    const { charactersArr, filteredInfo } = this.state;
     return (
       <div className="container">
         <h1 className="container__title">Harry Potter Characters</h1>
+        <label htmlFor="input-info" className="container__laber"></label>
+        <input type="text" id="input-info" className="container__input" value={filteredInfo} onChange={this.getInputValue}/>
         <ul className="container__list">
-          {charactersArr.map((item, index) => 
+          {charactersArr.map(item => 
           <li className="list__characters" key={item.id}>
           <h2>{item.name}</h2>
           <img src={item.image} alt={`Imagen de ${item.name}`}></img>
