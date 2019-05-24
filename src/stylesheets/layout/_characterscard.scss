@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__img {
+  width: 250px;
+  height: 370px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card__details {
+  list-style: none;
+}

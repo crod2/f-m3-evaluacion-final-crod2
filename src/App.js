@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './stylesheets/App.scss';
 import { fetchPotter } from './services/FetchPotter';
 import { Route, Switch } from 'react-router-dom';
 import Filters from './components/Filters';
