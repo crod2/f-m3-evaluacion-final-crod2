@@ -77,7 +77,7 @@ getHouse(house) {
     return (
       <div className="container">
         <h1 className="container__title">Welcome to the Wizarding World of Harry Potter</h1>
-        <img className="container__img" src="http://www.sclance.com/pngs/harry-potter-logo-png/harry_potter_logo_png_644093.png"/>
+        <img className="container__img" src="https://www.sclance.com/pngs/harry-potter-logo-png/harry_potter_logo_png_644093.png"/>
         
         <Switch>
           <Route exact path="/" render={ () => 
