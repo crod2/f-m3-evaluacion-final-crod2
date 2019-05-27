@@ -8,7 +8,7 @@ class CharacterCard extends React.Component {
   }
 
   render() {
-    const { charactersArr, id } = this.props;
+    const { charactersArr, id, getHouse } = this.props;
     const characterCard = charactersArr[id];
 
     return (
@@ -21,8 +21,8 @@ class CharacterCard extends React.Component {
               </div>
               <div className="card__details">
                 <h2 className="characters__name">{characterCard.name.toUpperCase()}</h2>
+                <img className="characters__house" src={getHouse(characterCard.house)} alt={`Image of ${characterCard.name}`}></img>
                 <ul className="card__details">
-                  <li>{`House: ${characterCard.house.toUpperCase()}`}</li>
                   <li>{`Date of Birth: ${characterCard.dateOfBirth}`}</li>
                   <li>{`Patronus: ${characterCard.patronus.toUpperCase()}`}</li>
                   {characterCard.alive ?

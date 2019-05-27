@@ -19,6 +19,7 @@ constructor(props) {
   this.getInputValue = this.getInputValue.bind(this);
   this.resetFilters = this.resetFilters.bind(this);
   this.getLS = this.getLS.bind(this);
+  this.getHouse = this.getHouse.bind(this);
 }
 
 fetchCharacters() {
@@ -57,6 +58,20 @@ resetFilters() {
   this.setState( {filteredInfo : ''} )
 }
 
+getHouse(house) {
+  if (house === 'Gryffindor') {
+    return 'https://vignette.wikia.nocookie.net/es.harrypotter/images/b/b8/Logo_Gryffindor_2.jpg/revision/latest?cb=20160417160851'
+  } else if (house === 'Slytherin') {
+    return 'https://vignette.wikia.nocookie.net/es.harrypotter/images/d/d0/Logo_Slytherin_2.png/revision/latest?cb=20160417160853'
+  } else if (house === 'Hufflepuff') {
+    return 'https://vignette.wikia.nocookie.net/es.harrypotter/images/3/30/Logo_Hufflepuff_2.png/revision/latest?cb=20160417160852'
+  } else if (house === 'Ravenclaw') {
+    return 'https://vignette.wikia.nocookie.net/es.harrypotter/images/3/36/Logo_Ravenclaw_2.png/revision/latest?cb=20160417160853'
+  } else {
+    return null
+  }
+}
+
   render() {
     const { charactersArr, filteredInfo } = this.state;
     return (
@@ -74,7 +89,7 @@ resetFilters() {
           />
         
           <Route path="/charactercard/:id" render={potterProps => (
-          <CharacterCard id={potterProps.match.params.id} charactersArr={charactersArr} resetFilters={this.resetFilters} />)}/>
+          <CharacterCard id={potterProps.match.params.id} charactersArr={charactersArr} resetFilters={this.resetFilters} getHouse={this.getHouse} />)}/>
 
         </Switch>
 
