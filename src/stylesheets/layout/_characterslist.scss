@@ -1,7 +1,22 @@
 .container__list {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 167px 167px 167px 167px 167px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media all and (min-width: 768px) {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 167px 167px 167px;
+  }
+
+  @media all and (min-width: 1020px) {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 167px 167px 167px 167px 167px;
+  }
+  
+  
 }
 
 .list__characters {
