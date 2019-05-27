@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 0;
 
   @media all and (min-width: 768px) {
     display: grid;
@@ -14,28 +15,39 @@
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 167px 167px 167px 167px 167px;
-  }
-  
-  
+  } 
 }
 
 .list__characters {
   list-style: none;
+  background: black;
 }
 
-.characters__link {
+.list__link {
   text-decoration: none;
 }
 
-.characters__img {
+.container__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 167px;
+}
+
+.list__img {
   width: 167px;
   height: 233px;
 }
 
-.characters__name {
+.list__name {
   font-family: "Oswald", Helvetica;
+  text-decoration: none;
+  margin: 5px;
+  color: #ddc8a9;
+  text-align: center;
 }
 
-.characters__house {
-  font-family: "Oswald", Helvetica;
+.list__house {
+  width: 50px;
 }

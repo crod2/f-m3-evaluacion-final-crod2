@@ -60,15 +60,15 @@ resetFilters() {
 
 getHouse(house) {
   if (house === 'Gryffindor') {
-    return 'https://vignette.wikia.nocookie.net/es.harrypotter/images/b/b8/Logo_Gryffindor_2.jpg/revision/latest?cb=20160417160851'
+    return 'https://d1v224g40dbxxy.cloudfront.net/s3fs-public/gallery-images/Griffyn_0.png?4kQC5RlG0.YTXTKSv2XFRPEQzudcKngf'
   } else if (house === 'Slytherin') {
-    return 'https://vignette.wikia.nocookie.net/es.harrypotter/images/d/d0/Logo_Slytherin_2.png/revision/latest?cb=20160417160853'
+    return 'https://d1v224g40dbxxy.cloudfront.net/s3fs-public/gallery-images/Sly_0.png?SExUyce6x9j.xakVjrvhB0zXt1ZTwLxK'
   } else if (house === 'Hufflepuff') {
-    return 'https://vignette.wikia.nocookie.net/es.harrypotter/images/3/30/Logo_Hufflepuff_2.png/revision/latest?cb=20160417160852'
+    return 'https://d1v224g40dbxxy.cloudfront.net/s3fs-public/gallery-images/Huffle_0.png?lPf6cPdBB2rMbdHm9oZM0w0iJx07hoej'
   } else if (house === 'Ravenclaw') {
-    return 'https://vignette.wikia.nocookie.net/es.harrypotter/images/3/36/Logo_Ravenclaw_2.png/revision/latest?cb=20160417160853'
+    return 'https://d1v224g40dbxxy.cloudfront.net/s3fs-public/gallery-images/Raven_0.png?LTQM_J6raYLtZGfHVRb5lS_uCRqRTMIq'
   } else {
-    return null
+    return null;
   }
 }
 
@@ -76,14 +76,14 @@ getHouse(house) {
     const { charactersArr, filteredInfo } = this.state;
     return (
       <div className="container">
-        <h1 className="container__title">Welcome to the magical world of</h1>
-        <img className="container__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Harry_Potter_wordmark.svg/2180px-Harry_Potter_wordmark.svg.png"/>
+        <h1 className="container__title">Welcome to the Wizarding World of Harry Potter</h1>
+        <img className="container__img" src="http://www.sclance.com/pngs/harry-potter-logo-png/harry_potter_logo_png_644093.png"/>
         
         <Switch>
           <Route exact path="/" render={ () => 
             <React.Fragment>
               <Filters filteredInfo={filteredInfo} getInputValue={this.getInputValue} />
-              <CharactersList filteredInfo={filteredInfo} charactersArr={charactersArr} />
+              <CharactersList filteredInfo={filteredInfo} charactersArr={charactersArr} getHouse={this.getHouse} />
             </React.Fragment>
           }
           />

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class CharactersList extends React.Component {
   render() {
 
-    const {filteredInfo, charactersArr} = this.props;
+    const {filteredInfo, charactersArr, getHouse} = this.props;
 
     return (
       <React.Fragment>
@@ -13,10 +13,12 @@ class CharactersList extends React.Component {
           .filter(item => item.name.toLowerCase().includes(filteredInfo.toLowerCase()))
           .map(item => 
           <li className="list__characters" key={item.id}>
-          <Link to={`/charactercard/${item.id}`} className="characters__link">
-            <img className="characters__img" src={item.image} alt={`Imagen de ${item.name}`}></img>
-            <h2 className="characters__name">{item.name}</h2>
-            <h3 className="characters__house">{item.house}</h3>
+          <Link to={`/charactercard/${item.id}`} className="list__link">
+            <img className="list__img" src={item.image} alt={`Imagen de ${item.name}`}></img>
+            <div className="container__info">
+              <h2 className="list__name">{item.name}</h2>
+              <img className="list__house" src={getHouse(item.house)} alt={item.house}></img>
+            </div>
           </Link>
           </li>
           )}

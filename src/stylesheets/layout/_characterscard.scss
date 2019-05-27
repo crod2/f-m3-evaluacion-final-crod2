@@ -10,11 +10,17 @@
     width: 600px;
     margin: 0 auto;
   }
-  
+}
+
+.fa-arrow-circle-left {
+  position: absolute;
+  color: whitesmoke;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 30px;
 }
 
 .card__img {
-  width: 250px;
   height: 370px;
   background-size: cover;
   background-position: center;
@@ -22,10 +28,44 @@
 
 .card__details {
   list-style: none;
+  height: 370px;
+  padding: 0;
   font-family: "Oswald", Helvetica;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.characters__name {
+  font-size: 30px;
 }
 
 .characters__house {
-  height: 160px;
   width: 135px;
+}
+
+.gryffindor {
+  background: #8e1405;
+  color: #c6a513;
+}
+
+.slytherin {
+  background: #235416;
+  color: white;
+}
+
+.hufflepuff {
+  background: #f2b817;
+  color: #161616;
+}
+
+.ravenclaw {
+  background: #204e80;
+  color: #7a7a7a;
+}
+
+.noHouse {
+  background: #630a62;
+  color: whitesmoke;
 }

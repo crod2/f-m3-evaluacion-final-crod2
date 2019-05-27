@@ -1,7 +1,32 @@
+.container__label {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container__input {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  font-family: "Oswald", Helvetica;
+  height: 25px;
+  width: 150px;
+  background: black;
+
+  @media all and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 450px;
+  }
+
+  @media all and (min-width: 1020px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 800px;
+  }
 }
