@@ -28,7 +28,7 @@ class CharacterCard extends React.Component {
                   {characterCard.alive ?
                     <li>By the end of the saga they are... ALIVE!</li>
                     :
-                    <li>By the end of the saga they are... ☠️</li>
+                    <li>By the end of the saga they are... ☠️☠️☠️</li>
                   }
                 </ul>
               </div>
