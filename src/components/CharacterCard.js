@@ -41,7 +41,7 @@ class CharacterCard extends React.Component {
               </div>
               <div className={`card__details ${this.getColor(characterCard.house)}`}>
                 <h2 className="characters__name">{characterCard.name.toUpperCase()}</h2>
-                <img className="characters__house" src={getHouse(characterCard.house)} alt={`Image of ${characterCard.name}`}></img>
+                <img className="characters__house" src={getHouse(characterCard.house)} alt={characterCard.house}></img>
                 <ul className="card__details">
                   <li>{`Date of Birth: ${characterCard.dateOfBirth}`}</li>
                   <li>{`Patronus: ${characterCard.patronus.toUpperCase()}`}</li>
@@ -60,7 +60,6 @@ class CharacterCard extends React.Component {
         <Link to="/"><i className="fas fa-arrow-circle-left"></i></Link>
       </React.Fragment>
     )
-
   }
 }
 
